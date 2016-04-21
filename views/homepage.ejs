@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top up-nav" ng-controller="ToolbarController">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Hbase viewer</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav" ng-show="user">
+      <li ng-class="{active: menu=='home'}"><a href="#/">Home</a></li>
+      <li ng-class="{active: menu=='table'}"><a href="#/tables">Table editor</a></li>
+      <li ng-class="{active: menu=='users'}"><a href="#/users">Subscription editor</a></li>
+      <li class="divider-vertical"></li>
+      <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connection: {{currentSubscription.hbase.ip}}:{{currentSubscription.hbase.port}} <span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-scroll" ng-repeat="connection in subscriptions">
+          <li><a href="" ng-click="ChangeConnection($index)">{{connection.hbase.ip}}:{{connection.hbase.port}}</a></li>
+        </ul>
+      </li>
+      <li ng-show="user"><a>Status: {{status.userStatus}}</a></li>
+      <li ng-show="!status.connected" ng-click="connect()"><a href="">Connect</a></li>
+      <li ng-show="status.connected" ng-click="disconnect()"><a href="">Disconnect</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-class="{active: menu=='about'}"><a href="#/about">About</a></li>
+      <li ng-class="{active: menu=='contact'}"><a href="#/contact">Contact</a></li>
+      <li ng-show="user"><a href="#" ng-click="logout()">Log out</a></li>
+      <li ng-show="!user" ng-class="{active: menu=='login'}"><a href="#/login">Login</a></li>
+      <li ng-show="!user" ng-class="{active: menu=='register'}"><a href="#/register">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="col-sm-8">
+        <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        <div ng-view></div>
+    </div>
+</div>

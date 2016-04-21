@@ -1,0 +1,1 @@
+module.exports = require('./connectionPermGeneric')(roles.bits.connectionControl);

@@ -1,0 +1,56 @@
+﻿.container {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.navbar .divider-vertical {
+    height: 50px;
+    margin: 0 9px;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+     }
+}
+
+.navbar {
+  padding-right: 30px;
+}
+
+.second-nav {
+  margin-top: 50px !important;
+}
+
+.up-nav {
+  z-index: 3 !important;
+}
+
+.down-nav {
+  z-index: 1 !important;
+}
+
+.hbase-table {
+  margin-top: 50px;
+}
+
+.table>tbody>tr>td {
+  max-width: 400px;
+  width: auto;
+  max-height: 400px;
+  height: auto;
+  overflow: auto;
+}
+
+.dropdown-scroll {
+  max-height: 300px;
+  height: auto;
+  overflow-x: hidden;
+}
