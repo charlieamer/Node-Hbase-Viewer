@@ -3,7 +3,8 @@
   "private": false,
   "version": "0.0.1",
   "description": "Node-based hbase viewer built on sails framework",
-  "keywords": [],
+  "keywords": ["node", "hbase", "hbaseviewer", "hbase-viewer", "hbase viewer", "viewer", "editor", "hbase-editor",
+    "hbase editor", "hbaseeditor", "hadoop", "big-data", "bigdata", "big data", "cloud", "angular", "angularjs"],
   "dependencies": {
     "ejs": "~0.8.4",
     "grunt": "0.4.5",
